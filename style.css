@@ -1,0 +1,482 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #3e2f23;
+  padding: 5px 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Lien de WhatsApp */
+.Wa {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  color: #a05;
+  background-color: #8b5e3c;
+  padding: 10px 10px;
+  border-radius: 6px;
+}
+
+.hero {
+  background: url('Marwich.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding-top: 60px;
+}
+
+.hero .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 90%;
+}
+
+.hero h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 600px) {
+  .buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.btn, .btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #8b5e3c;
+}
+
+.btn-secondary {
+  background-color: #4a3728;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.item p {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.footer {
+  background-color: #3e2f23;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: #ffcc80;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+/* Réutilisation du style général déjà présent */
+.section.services {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section.services h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #3e2f23;
+}
+
+/* Cartes de services avec box-shadow */
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 15px;
+  max-width: 300px;
+  flex: 1 1 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.service img {
+width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service h3 {
+  font-size: 1.3rem;
+  color: #3e2f23;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Footer hérite déjà du style global /* Texte d’intro mis en avant */
+.intro-texte {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-left: 6px solid #a0522d;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin: 30px auto;
+  max-width: 90%;
+  color: #333;
+}
+
+/* Scroll horizontal d'images */
+.image-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.image-scroll-container img {
+  flex: 0 0 auto;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-scroll-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* Cadre pour la description */
+.description-cadre {
+  background-color: #fafafa;
+  border: 2px solid #a0522d;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 90%;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: #444;
+}
+
+/* Lien de retour */
+.retour-services {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #a0522d;
+  background-color: #fff4e6;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.retour-services:hover {
+  background-color: #ffe4c4;
+}
+
+/* Section À propos - Général */
+main.apropos {
+  max-width: 1000px;
+  margin: 100px auto 40px;
+  padding: 0 20px;
+}
+
+/* Sous-sections (Histoire, Vision, etc.) */
+.apropos section {
+  margin-bottom: 40px;
+  background-color: #fffdfb;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-left: 6px solid #a0522d;
+}
+
+.apropos h2 {
+  color: #3e2f23;
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e5cbb0;
+  padding-bottom: 5px;
+}
+
+.apropos p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* Liste des valeurs */
+.valeurs ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.valeurs li {
+  margin-bottom: 12px;
+  background-color: #fff8f2;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Intro encadrée */
+.intro {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-left: 6px solid #a0522d;
+  border-radius: 12px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Bloc de citation */
+.temoignage-fondateur {
+  font-style: italic;
+  background-color: #fff6eb;
+  padding: 20px 25px;
+  border-left: 6px solid #a0522d;
+  border-radius: 10px;
+  margin-top: 40px;
+  color: #3e2f23;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* Section 1 : Présentation de l’atelier */
+.section-atelier {
+  padding: 40px 20px;
+  background-color: #fdfaf6;
+  text-align: center;
+}
+
+.section-atelier h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-atelier p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* Section 4 : Valeurs fondamentales */
+.section-valeurs {
+  padding: 40px 20px;
+  background-color: #f0f0f0;
+}
+
+.section-valeurs h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.liste-valeurs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.liste-valeurs .valeur {
+  background-color: #fff;
+  border-left: 5px solid #a0522d;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.liste-valeurs .valeur h4 {
+  color: #a0522d;
+  margin-bottom: 10px;
+}
+
+.liste-valeurs .valeur p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Section 5 : Témoignage du fondateur avec image floutée */
+.temoignage-fondateur {
+  position: relative;
+  margin: 40px auto;
+  max-width: 900px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.temoignage-background {
+  background-image: url("images/fondateur.jpg"); /* Remplace avec ton image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  height: 250px;
+  position: relative;
+}
+
+.temoignage-background blockquote {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 4px solid #ffffffcc;
+  font-style: italic;
+  font-size: 1.2rem;
+  z-index: 2;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Section 6 : Vision pour l’avenir */
+.section-vision {
+  padding: 40px 20px;
+  background-color: #fdfaf6;
+}
+
+.section-vision h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-vision p {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
